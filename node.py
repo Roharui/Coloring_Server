@@ -12,7 +12,6 @@ class Node:
         self.data = []
         tmp = self.conn.recv(self.buffer)
         while tmp != b'DONE':
-            print(tmp)
             self.data.append(tmp)
             if started:
                 self.conn.send(b'@SOK#')
@@ -36,10 +35,10 @@ class Node:
             return None
 
     def command(self):
-        return self.data[0].decode("utf8")
+        return self.data[0].decode("euc-kr")
 
     def getData(self):
-        return [x.decode("utf8") for x in self.data[1:]]
+        return [x.decode("euc-kr") for x in self.data[1:]]
 
     def sendData(self, data):
         datas = [data[i:i+self.buffer] for i in range(0, len(data), self.buffer)]
@@ -47,12 +46,13 @@ class Node:
             #i = b'@' + i + b'#'
             self.conn.send(i)
             self.conn.recv(self.buffer)
-        self.conn.send(b'DONE')
+        self.conn.send(b'@DONE#')
 
     def sendIMG(self, data):
         datas = [data[i:i+self.buffer - 7] for i in range(0, len(data), self.buffer - 7)]
         for i in datas:
             i = b'@IMG' + i + b'###'
             self.conn.send(i)
-            self.conn.recv(self.buffer)
-        self.conn.send(b'DONE')
+            x = self.conn.recv(self.buffer)
+            print(x)
+        self.conn.send(b'@DONE#')

@@ -28,7 +28,7 @@ class File:
     def getFile(self, data):
         f = open(self.name, 'wb')
         for i in data:
-            f.write(i[1:-1])
+            f.write(i)
         f.close()
         self.img = imread(self.name)
     #

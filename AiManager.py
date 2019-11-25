@@ -12,15 +12,19 @@ def convert(o):
     raise TypeError
 
 class AiManager:
-
     def do(self, data):
+        result = ""
         model = load_model('CRM.h5')
         data = list(map(int, data[0].split(',')))
         data = (np.array([data]) / 255).astype('float32')
         colors = model.predict(data)[0]
-        colors = (np.array(colors) * 255).astype(int)
-        result = {num : list(x) for num, x in enumerate(colors)}
-        return json.dumps(result, default=convert)
+        colors = ((np.array(colors) + 0.3) * 255).astype(int)
+        for co in colors:
+            for c in co:
+                if c > 255.0:
+                    c = 255
+                result += str(c) + ","
+        return result[:-1]
 
 
 if __name__ == '__main__':

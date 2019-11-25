@@ -37,6 +37,7 @@ class Command:
         #self.yolo.get_output()
 
     def getCmd(self):
+        print()
         print("Command resived - {0}".format(self._node.command()))
         return self._node.command()
 
@@ -53,6 +54,9 @@ class Command:
         self.f.getFile(self._node.pars_filedata())
         print("reciving Success - {0}".format(self.f.addr))
         self.predict()
+        print("sending File : {0} - {1}".format(self.f.exname, self.f.addr))
+        self._node.sendIMG(self.f.strFile())
+        print("sending Success - {0}".format(self.f.addr))
         return True
         
     

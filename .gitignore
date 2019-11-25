@@ -1,1 +1,5 @@
 yolo/
+data/
+ex_data/
+after_data/
+*.bat
