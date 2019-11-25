@@ -38,5 +38,5 @@ https://www.pyimagesearch.com/2018/09/03/semantic-segmentation-with-opencv-and-d
 # Testing
 
 ## AI_Color
-<img src="./testing/AI_Color.png" width="400" height="700">  
+<img src="./testing/AI_Color.PNG">  
 
