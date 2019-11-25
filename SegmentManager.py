@@ -118,10 +118,9 @@ if __name__ == '__main__':
 
     s = SegmentManager()
 
-    dfdf = cv2.imread("client/test_img2.jpg")
-    print(dfdf.shape)
+    dfdf = cv2.imread("testData/018.jpg")
 
-    s.set_img_test("client/test_img2.jpg")
+    s.set_img_test("testData/018.jpg")
     s.get_output()
     s.xy = (10, 10)
     s.getSimiler()

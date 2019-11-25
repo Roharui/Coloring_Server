@@ -77,7 +77,7 @@ if __name__ == '__main__':
     s.connect(("127.0.0.1", 6355))
     fm = FileManager(s)
     #fm.send("test.jpg")
-    fm.send("test_img2.jpg")
+    fm.send("018.jpg")
 
     fm.recv("test.png")
 

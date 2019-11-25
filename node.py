@@ -54,5 +54,4 @@ class Node:
             i = b'@IMG' + i + b'###'
             self.conn.send(i)
             x = self.conn.recv(self.buffer)
-            print(x)
         self.conn.send(b'@DONE#')

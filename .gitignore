@@ -1,5 +1,10 @@
-yolo/
-data/
-ex_data/
-after_data/
+yolo/*
+data/*
+ex_data/*
+after_data/*
+testData/
+client/
 *.bat
+*.zip
+__pycache__/
+.vscode
