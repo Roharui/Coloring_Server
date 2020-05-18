@@ -33,6 +33,7 @@ this repository do not have yolo weight, config and etc. if you want to use. ple
 # hard_fork
 
 https://www.pyimagesearch.com/2018/09/03/semantic-segmentation-with-opencv-and-deep-learning/
+https://github.com/AlexeyAB/darknet
 
 
 # Testing
